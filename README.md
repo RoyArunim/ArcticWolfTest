@@ -15,6 +15,6 @@ Inside the project you will fine two directories that have property files stored
 FileStore1  
 FileStore2 
 Run the Server and Clients separately.
-The original property files will get deleted once sent to Server.
+The original property files will get deleted once sent to Server.  
 The final result will appear in a folder FinalFileStore that gets created by server on consuming the bytestreams from Client.  
 
