@@ -1,15 +1,9 @@
 package com.project.directorymonitoring.Client2app;
 
-import com.project.directorymonitoring.Client1app.Client1App;
 import com.project.directorymonitoring.FileProcessor;
-import com.project.directorymonitoring.FileReceiver;
-
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Map;
 
 public class Client2App {
@@ -25,7 +19,7 @@ public class Client2App {
                 Socket socket = new Socket("localhost", 9999);
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream())
         ) {
-            Map<String, byte[]> fileMap = processor.processFiles(directoryPath, "^[a-z]+\\.[a-z]+$");
+            Map<String, byte[]> fileMap = processor.processFiles(directoryPath, "^[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)+$");
             out.writeObject(fileMap);
             System.out.println("Sent file map to server.");
         } catch (IOException e) {

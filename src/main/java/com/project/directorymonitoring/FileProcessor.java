@@ -1,12 +1,6 @@
 package com.project.directorymonitoring;
 
 import java.io.*;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -37,7 +31,7 @@ public class FileProcessor {
 
 
 
-            Pattern pattern = Pattern.compile(".*"); // Accept all keys for now
+            Pattern pattern = Pattern.compile(regex);
             props.stringPropertyNames().forEach(key -> {
                 if (pattern.matcher(key).matches()) {
                     newProperties.setProperty(key, props.getProperty(key));

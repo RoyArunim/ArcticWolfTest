@@ -1,14 +1,9 @@
 package com.project.directorymonitoring.Client1app;
 
 import com.project.directorymonitoring.FileProcessor;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Map;
 
 public class Client1App {
@@ -24,7 +19,7 @@ public class Client1App {
                 Socket socket = new Socket("localhost", 9999);
                 ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream())
         ) {
-            Map<String, byte[]> fileMap = processor.processFiles(folderPath, "^[a-z]+\\.[a-z]+$");
+            Map<String, byte[]> fileMap = processor.processFiles(folderPath, "^[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)+$");
             out.writeObject(fileMap);
             System.out.println("Sent file map to server.");
         } catch (IOException e) {
