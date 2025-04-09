@@ -14,8 +14,8 @@ git clone https://github.com/RoyArunim/ArcticWolfTest/tree/master
 Inside the project you will find two directories that have property files stored within them.  
 FileStore1  
 FileStore2  
-The Client code processes the properties files such that only dot separated keys are picked up adn the rest are ignored.  
-This is the format of the regular expression that is filtering the properties. If the files donot match the regex format specified, the Client will show that message and close the socket.  
+The Client code processes the properties files such that only dot separated keys are picked up and the rest are ignored.  
+This is the format of the regular expression that is filtering the properties. If the content in the files does not match the regex format specified, the Client will show that message No Matching keys found in `<<Filename>>` and close the socket.  
 
 Make sure these folder paths pre exist otherwise they might throw FileNotfound errors.
 
